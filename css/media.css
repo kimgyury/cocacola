@@ -1,0 +1,145 @@
+@charset "utf-8";
+/* media.css - 미디어쿼리 CSS*/
+
+/*1000px 이하*/
+@media only screen and (max-width:1000px){
+	/*배너를 비율로 변경하기*/
+	#banner{
+		height: auto;/*기존 100%를 변경*/
+	}
+	/*배너를 비율밀기로 셋팅*/
+	#banner::before{
+		content: "";
+		display: block;
+		padding-top: 50%;/*height를 만들어줌!*/
+	}
+	#banner>ul>li>h1{/*배너글자 크기변경*/
+		font-size: 1.2rem !important;
+	}
+	
+	/*로고 중앙 이동*/
+	#logo {
+		display: block;/*margin: 0 auto 중앙정렬 적용!*/
+		width: 24%;
+		margin: 3% auto;
+	}
+	/*탑메뉴 배경 투명도 조절*/
+	#top::before {
+		opacity: 0.5;
+	}
+	/*상단 기본 메뉴 없애기*/
+	#gnb{
+		display:none;
+	}
+	/* 배너 블릿 중앙 이동하기 */
+	.bpoint{
+		left: 50%;
+		transform: translateX(-50%);/*가로중앙이동*/
+	}
+	
+	#ham{
+		transform: scale(0.7) translateY(-50%);
+	}
+	
+	/*전체메뉴 변경*/
+	#menu>div{
+		text-align: center;
+	}
+	#menu>div>dl>dt{
+		font-size: 1.2rem;
+		padding-bottom: 5px;
+	}
+	#menu>div>dl>dd{
+		font-size: 1rem;
+		padding-bottom: 2px;
+	}
+	
+	
+	/*********남자,여자,스타일 박스 공통 변경*********/
+	#cont1, #cont2{
+		height: auto; /*기존의 100%를 변경!!!*/
+	}
+	
+	#cont1::before, #cont2::before{/*박스 비율밀기*/
+		content: "";
+		display: block;
+		padding-top: 80%;/*가로:세로=1:0.8*/
+	}
+	#cont1>ul, #cont2>ul{/*속박스인 ul 올라오게 하기*/
+		position: absolute;
+	}
+	#cont1>ul>li,#cont2>ul>li{/*이미지와 글자 겹치게 하기*/
+		position: absolute !important;
+		width:100% !important;
+	}
+	#cont1 h1, #cont2 h1, #cont3 h1{/*글자공통*/
+		color: #fff;
+		font-size: 2.1rem !important;
+		text-shadow: 0 0 4px #777;
+	}
+	#cont1>ul>li:first-child>img{/*남자이미지*/
+		width: 100%;
+		height: auto;
+	}
+	#cont2>ul>li:first-child{/*여자 글자위로*/
+		z-index: 1;
+	}
+	
+	/**********스타일 페이지*********/
+	#cont3::before{
+		content: "";
+		display: block;
+		padding-top: 160%;
+	}
+	/*속박스 변경*/
+	#cont3>ul{
+		position: absolute;
+		top: 0;
+	}
+	/*스타일 li공통*/
+	#cont3>ul>li{
+		position: absolute !important;
+		width: 100% !important;
+		height: 50%;
+	}
+	#cont3>ul>li img{/*스타일 이미지 공통*/
+		width: 100%;
+		height: auto !important;
+	}
+	
+	#cont3>ul>li:first-child{/*스타일 여자박스*/
+		top: 50%;
+	}
+	#cont3>ul>li:nth-child(2){/*글자박스 위로*/
+		height: 100%;
+		z-index: 1;
+	}	
+	
+	/**********회사정보**********/
+	#info{
+		margin-top: -50px;
+	}
+	#info>p{
+		width: 92%;
+		box-sizing: border-box;/*크기유지*/
+		font-size: .7rem;
+		margin: .5%;
+	}
+	
+	
+}/*1000px 이하*/
+
+/*640px 이하*/
+@media only screen and (max-width:640px){
+	
+	#cont3>ul>li img{/*스타일 이미지 공통*/
+		width: 150%;
+		height: auto !important;
+	}
+}/*640px 이하*/
+
+
+
+
+
+
